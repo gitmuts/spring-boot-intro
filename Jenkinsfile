@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+           spring.datasource.password    = credentials('spring.datasource.password')
+    }
     stages {
         stage('Build') {
             steps {
